@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Product Catalog Sync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./panel.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Product Catalog Sync</h1>
+      <p class="muted">Sync your external catalog into a Webflow CMS collection.</p>
+    </header>
+
+    <section class="card">
+      <h2>1. Target collection</h2>
+      <select id="collection-select"></select>
+      <button id="bootstrap-collection" class="btn">Create "Products" collection</button>
+    </section>
+
+    <section class="card">
+      <h2>2. Field mapping</h2>
+      <table class="map-table">
+        <thead><tr><th>CMS field</th><th>Source field</th></tr></thead>
+        <tbody id="mapping-body"></tbody>
+      </table>
+      <label class="toggle"><input type="checkbox" id="dry-run" /> Dry run (stage changes, do not write)</label>
+      <button id="save-mapping" class="btn primary">Save mapping</button>
+    </section>
+
+    <section class="card">
+      <h2>3. Sync</h2>
+      <label class="toggle"><input type="checkbox" id="publish-after" /> Publish site after sync</label>
+      <button id="sync-now" class="btn primary">Sync now</button>
+      <p id="sync-status" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>Sync history</h2>
+      <table class="map-table">
+        <thead><tr><th>Started</th><th>Status</th><th>+</th><th>~</th><th>archived</th><th>skipped</th><th>errors</th></tr></thead>
+        <tbody id="history-body"></tbody>
+      </table>
+    </section>
+  </div>
+  <script src="./panel.js"></script>
+</body>
+</html>

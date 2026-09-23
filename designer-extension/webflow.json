@@ -1,0 +1,7 @@
+{
+  "name": "product-catalog-webflow",
+  "displayName": "Product Catalog Sync",
+  "size": "large",
+  "entrypoint": "index.html",
+  "permissions": ["site.read", "cms.read", "cms.write", "assets.write"]
+}
